@@ -1,5 +1,5 @@
-import { listTools } from "../registry";
-import { Plan } from "../types";
+import { listTools } from "../registry.js../registry;
+import { Plan } from "../types.js../types;
 
 type LLMClient = { complete: (prompt: string) => Promise<string> };
 

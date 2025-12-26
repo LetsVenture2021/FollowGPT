@@ -5,9 +5,9 @@ import "../tools/tags";
 import "../tools/services";
 import "../tools/search";
 
-import { handleUserPrompt } from "../core/runtime";
-import { fakeLLM } from "./fake-llm";
-import { logRun } from "../persistence/store";
+import { handleUserPrompt } from "../core/runtime.js../core/runtime;
+import { fakeLLM } from "./fake-llm.js./fake-llm;
+import { logRun } from "../persistence/store.js../persistence/store;
 
 (async () => {
   const prompt = process.argv.slice(2).join(" ") || "generate a disk report";

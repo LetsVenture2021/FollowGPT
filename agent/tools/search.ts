@@ -1,5 +1,5 @@
-import { registerTool } from "../core/registry";
-import { searchDocuments } from "../persistence/store";
+import { registerTool } from "../core/registry.js../core/registry;
+import { searchDocuments } from "../persistence/store.js../persistence/store;
 
 registerTool({
   name: "search_index",

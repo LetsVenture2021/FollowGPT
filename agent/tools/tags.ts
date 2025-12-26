@@ -1,6 +1,6 @@
-import { registerTool } from "../core/registry";
-import { enforcePolicyPath } from "../core/policy";
-import { ExecutionContext } from "../core/types";
+import { registerTool } from "../core/registry.js../core/registry;
+import { enforcePolicyPath } from "../core/policy.js../core/policy;
+import { ExecutionContext } from "../core/types.js../core/types;
 
 /*
 Implement:

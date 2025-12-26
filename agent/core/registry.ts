@@ -1,4 +1,4 @@
-import { ToolDescriptor } from "./types";
+import { ToolDescriptor } from "./types.js./types;
 
 const registry = new Map<string, ToolDescriptor>();
 

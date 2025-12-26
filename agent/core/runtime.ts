@@ -1,6 +1,6 @@
-import { planFromPrompt } from "./llm/planner";
-import { executePlan } from "../core/executor";
-import { ExecutionContext, PlanResult } from "./types";
+import { planFromPrompt } from "./llm/planner.js./llm/planner;
+import { executePlan } from "../core/executor.js../core/executor;
+import { ExecutionContext, PlanResult } from "./types.js./types;
 
 type LLMClient = { complete: (prompt: string) => Promise<string> };
 

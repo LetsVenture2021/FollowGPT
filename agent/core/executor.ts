@@ -1,7 +1,7 @@
-import { getTool } from "./registry";
-import { validate } from "./validators";
-import { enforcePolicyTool } from "./policy";
-import { ExecutionContext, Plan, PlanResult } from "./types";
+import { getTool } from "./registry.js./registry;
+import { validate } from "./validators.js./validators;
+import { enforcePolicyTool } from "./policy.js./policy;
+import { ExecutionContext, Plan, PlanResult } from "./types.js./types;
 
 export async function executePlan(plan: Plan, ctx: ExecutionContext): Promise<PlanResult> {
   const results: PlanResult["results"] = [];
