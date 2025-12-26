@@ -1,0 +1,33 @@
+.world-clock {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  color: #e5e7eb;
+}
+.wc-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.wc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+.wc-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+}
+.wc-label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.wc-time {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 2px;
+}
