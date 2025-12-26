@@ -1,5 +1,5 @@
 import React from 'react';
-import './world-clock.css';
+import '../world-clock.css';
 
 const zones = [
   { label: 'Local', tz: Intl.DateTimeFormat().resolvedOptions().timeZone },
