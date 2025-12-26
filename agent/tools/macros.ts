@@ -1,9 +1,9 @@
-import { registerTool } from "../core/registry.js../core/registry;
-import { enforcePolicyPath, enforcePolicyTool } from "../core/policy.js../core/policy;
-import { Capability, ExecutionContext } from "../core/types.js../core/types;
-import { saveMacro, loadMacros } from "../persistence/store.js../persistence/store;
-import { getTool } from "../core/registry.js../core/registry;
-import { validate } from "../core/validators.js../core/validators;
+import { registerTool } from "../core/registry.js";
+import { enforcePolicyPath, enforcePolicyTool } from "../core/policy.js";
+import { Capability, ExecutionContext } from "../core/types.js";
+import { saveMacro, loadMacros } from "../persistence/store.js";
+import { getTool } from "../core/registry.js";
+import { validate } from "../core/validators.js";
 
 type MacroStep =
   | { kind: "tool"; tool: string; input: any }

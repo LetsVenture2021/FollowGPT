@@ -5,9 +5,9 @@ import fg from "fast-glob";
 import prettyBytes from "pretty-bytes";
 import archiver from "archiver";
 import unzipper from "unzipper";
-import { registerTool } from "../core/registry.js../core/registry;
-import { enforcePolicyPath } from "../core/policy.js../core/policy;
-import { ExecutionContext } from "../core/types.js../core/types;
+import { registerTool } from "../core/registry.js";
+import { enforcePolicyPath } from "../core/policy.js";
+import { ExecutionContext } from "../core/types.js";
 
 const posix = (p: string) => p.replace(/\\/g, "/");
 

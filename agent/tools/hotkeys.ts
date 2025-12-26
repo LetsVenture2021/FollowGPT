@@ -1,5 +1,5 @@
-import { registerTool } from "../core/registry.js../core/registry;
-import { ExecutionContext } from "../core/types.js../core/types;
+import { registerTool } from "../core/registry.js";
+import { ExecutionContext } from "../core/types.js";
 
 /*
 Backends to implement:

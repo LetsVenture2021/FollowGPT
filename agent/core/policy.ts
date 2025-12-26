@@ -1,5 +1,5 @@
 import path from "path";
-import { ExecutionContext, ToolDescriptor } from "./types.js./types;
+import { ExecutionContext, ToolDescriptor } from "./types.js";
 
 const isUnder = (p: string, root: string) => {
   const P = path.resolve(p);

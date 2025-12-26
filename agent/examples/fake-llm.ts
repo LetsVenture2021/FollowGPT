@@ -1,4 +1,4 @@
-import { Plan } from "../core/types.js../core/types;
+import { Plan } from "../core/types.js";
 
 export const fakeLLM = {
   async complete(_prompt: string): Promise<string> {
