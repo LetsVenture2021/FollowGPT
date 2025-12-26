@@ -14,8 +14,8 @@ type Message = {
 };
 
 const MODEL_DEFAULT = "gpt-4o-mini";
-const STORAGE_KEY = "followmegpt_api_key";
 const STORAGE_MODEL = "followmegpt_model";
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY || "";
 
 function uuid() {
   return Math.random().toString(36).slice(2);
@@ -56,7 +56,6 @@ async function callOpenAI({
 }
 
 function App() {
-  const [apiKey, setApiKey] = useState("");
   const [model, setModel] = useState(MODEL_DEFAULT);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -66,15 +65,9 @@ function App() {
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const storedKey = localStorage.getItem(STORAGE_KEY) || "";
     const storedModel = localStorage.getItem(STORAGE_MODEL) || MODEL_DEFAULT;
-    if (storedKey) setApiKey(storedKey);
     if (storedModel) setModel(storedModel);
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, apiKey);
-  }, [apiKey]);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_MODEL, model || MODEL_DEFAULT);
@@ -86,16 +79,16 @@ function App() {
 
   const canSend = useMemo(() => {
     return (
-      apiKey.trim().length > 0 &&
+      API_KEY.trim().length > 0 &&
       model.trim().length > 0 &&
       input.trim().length > 0 &&
       !isSending
     );
-  }, [apiKey, model, input, isSending]);
+  }, [model, input, isSending]);
 
   const handleSend = async () => {
     if (!canSend) {
-      setError("Add an API key, choose a model, and enter a message.");
+      setError("Set VITE_OPENAI_API_KEY, choose a model, and enter a message.");
       return;
     }
     setError(null);
@@ -106,7 +99,7 @@ function App() {
 
     try {
       const assistantContent = await callOpenAI({
-        apiKey: apiKey.trim(),
+        apiKey: API_KEY.trim(),
         model: model.trim(),
         messages: [...messages, userMessage].map((m) => ({
           role: m.role,
@@ -145,13 +138,8 @@ function App() {
       <header className="topbar">
         <div className="logo">Personal ChatGPT</div>
         <div className="controls">
-          <input
-            type="password"
-            placeholder="API key"
-            value={apiKey}
-            onChange={(e) => setApiKey(e.target.value)}
-          />
           <ModelSelector model={model} setModel={setModel} />
+          {!API_KEY && <div className="error-banner">Set VITE_OPENAI_API_KEY in .env</div>}
         </div>
       </header>
 
